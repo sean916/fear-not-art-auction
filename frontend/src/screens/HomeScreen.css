@@ -1,0 +1,41 @@
+.homescreen {
+    background-image: url(https://media.giphy.com/media/3o7aCQ3E3EvJyJg7JK/giphy.gif);
+    background-size: cover;
+    height: 100vh;
+    z-index: 30;
+}
+
+.homescreen > .container {
+    z-index: 35;
+    height: 100vh;
+    background: rgba(38, 49, 56, 0.65);
+
+}
+
+.homescreen > .container > .header {
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.homescreen > .container > .header:hover {
+    color: rgb(181, 200, 221);
+}
+
+
+.homescreen > .container > .items-btn > a {
+    text-decoration: none;
+    color: rgb(243, 243, 243, 0.8);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7vh;
+}
+
+.homescreen > .container > .items-btn > a:hover {
+    color: rgb(181, 200, 221, 0.8);
+
+}

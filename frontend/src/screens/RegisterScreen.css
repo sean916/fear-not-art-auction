@@ -1,0 +1,46 @@
+.registerscreen {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.registerscreen > h1 {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    font-size: 36px;
+    color: rgb(52, 70, 90);
+}
+
+.form-group {
+    font-size: 28px;
+    margin: 5px;
+}
+
+.form-control {
+    font-size: 28px;
+    border-radius: 12px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.registerscreen > form > input {
+    font-size: 28px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: rgb(52, 70, 90);
+    color: white;
+    margin: 10px;
+}
+
+.registerscreen > form > input:hover {
+    background-color: rgb(112, 136, 163);
+}
+
+.registerscreen > h3 {
+    font-size: 28px;
+}
+
+.registerscreen > p {
+    font-size: 22px;
+}
