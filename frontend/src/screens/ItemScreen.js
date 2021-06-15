@@ -5,6 +5,16 @@ import Item from '../components/Item'
 
 const ItemScreen = () => {
 
+    const [user, setUser] = useState();
+
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem('user');
+        if (loggedInUser) {
+          const foundUser = JSON.parse(loggedInUser);
+          setUser(foundUser);
+        }
+      }, []);
+
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 

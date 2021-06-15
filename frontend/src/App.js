@@ -7,6 +7,7 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import AboutCryptoScreen from './screens/AboutCryptoScreen';
 import ItemScreen from './screens/ItemScreen';
+import AdminScreen from './screens/AdminScreen';
 
 // Components
 import Navbar from './components/Navbar';
@@ -22,6 +23,7 @@ function App() {
           <Route exact path='/items' component={ItemScreen} />
           <Route exact path='/login' component={LoginScreen} />
           <Route exact path='/register' component={RegisterScreen} />
+          <Route exact path='/admin-tools' component={AdminScreen} />
         </Switch>
       </main>
     </Router>

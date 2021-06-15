@@ -75,6 +75,10 @@ passport.serializeUser(function(user, done) {
       done(err, user);
     });
   });
+  app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+  });
 
   // Set up routes
 const loginRouter = require('./routes/loginRoutes');
