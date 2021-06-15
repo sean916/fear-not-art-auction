@@ -10,6 +10,11 @@ const HomeScreen = () => {
                     <h1>Fear Not Art Gallery</h1>
                 </div>
                 <div className='items-btn'>
+                    <Link to='/about-crypto'>
+                        Learn About Crypto & NFTs
+                    </Link>
+                </div>
+                <div className='items-btn'>
                     <Link to='/items'>
                         View Gallery Items
                     </Link>

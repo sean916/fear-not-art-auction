@@ -29,5 +29,7 @@
 }
 
 .navbar__links > li > a:hover {
-    color: rgb(181, 200, 221);
+    
+    /* color: rgb(181, 200, 221); */
+    color: rgb(226, 155, 23);
 }

@@ -12,6 +12,11 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
+                    <Link to='/about-crypto'>
+                        Crypto & NFTs
+                    </Link>
+                </li>
+                <li>
                     <Link to='/items'>
                         Gallery Items
                     </Link>

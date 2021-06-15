@@ -21,7 +21,9 @@
 }
 
 .homescreen > .container > .header:hover {
-    color: rgb(181, 200, 221);
+
+    /* color: rgb(181, 200, 221); */
+    color: rgb(226, 155, 23, 0.8);
 }
 
 
@@ -36,6 +38,8 @@
 }
 
 .homescreen > .container > .items-btn > a:hover {
-    color: rgb(181, 200, 221, 0.8);
+
+    /* color: rgb(181, 200, 221, 0.8); */
+    color: rgb(226, 155, 23);
 
 }

@@ -1,0 +1,38 @@
+.aboutcryptoscreen {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(52, 70, 90);
+}
+
+.aboutcryptoscreen > .header {
+    margin: 20px 10px;
+}
+
+.aboutcryptoscreen > .header > h1 {
+    margin-bottom: 10px;
+}
+
+.aboutcryptoscreen > .header > ul > li > a {
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none;
+    color: rgb(52, 70, 90);
+    font-size: 22px;
+}
+.aboutcryptoscreen > .header > ul > li > a:hover {
+    color: rgb(226, 155, 23)
+}
+
+.aboutcryptoscreen > .vid-group {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.aboutcryptoscreen > .vid-group > video {
+    max-width: 90%;
+    max-height: 70vh;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

@@ -12,7 +12,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+// Import Models
 const User = require('./models/user');
+const Item = require('./models/item');
+const Bid = require('./models/bid');
 
 const app = express();
 
@@ -74,11 +77,16 @@ passport.serializeUser(function(user, done) {
   });
 
   // Set up routes
-var loginRouter = require('./routes/loginRoutes');
-var registerRouter = require('./routes/registerRoutes');
+const loginRouter = require('./routes/loginRoutes');
+const registerRouter = require('./routes/registerRoutes');
+const itemRouter = require('./routes/itemRoutes');
+const bidRouter = require('./routes/bidRoutes');
 
 app.use('/api/login', loginRouter);
 app.use('/api/register', registerRouter);
+app.use('/api/item', itemRouter);
+app.use('/api/bid', bidRouter);
+
 
 const PORT = process.env.PORT || 5000;
 
