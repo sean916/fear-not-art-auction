@@ -85,11 +85,15 @@ const loginRouter = require('./routes/loginRoutes');
 const registerRouter = require('./routes/registerRoutes');
 const itemRouter = require('./routes/itemRoutes');
 const bidRouter = require('./routes/bidRoutes');
+const artistRouter = require('./routes/artistRoutes');
+const categoryRouter = require('./routes/categoryRoutes');
 
 app.use('/api/login', loginRouter);
 app.use('/api/register', registerRouter);
 app.use('/api/item', itemRouter);
 app.use('/api/bid', bidRouter);
+app.use('/api/artist', artistRouter);
+app.use('/api/category', categoryRouter);
 
 
 const PORT = process.env.PORT || 5000;

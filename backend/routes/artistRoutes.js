@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const bidController = require('../controllers/bidControllers');
+const artistController = require('../controllers/artistControllers');
 const User = require('../models/user');
 const async = require('async');
 const bcrypt = require('bcryptjs');
@@ -7,17 +7,18 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
-// Send bid request with form information
-router.post('/', bidController.postBid);
+// Get all artists
+router.get('/', artistController.getArtists);
 
-// View Bids
+// Get one artist
+router.get('/:id', artistController.getArtistDescription)
 
-// View a Bid
+// Get all artists, sort by???
 
-// Create new Bid
+// Create new Artist
 
-// Update an Bid
+// Update an Artist
 
-// Delete an Bid
+// Delete an Artist
 
 module.exports = router;

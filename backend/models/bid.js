@@ -5,9 +5,9 @@ var Schema = mongoose.Schema;
 var BidSchema = new Schema(
     {
         //TODO BID MODEL SCHEMA
-        // email: { type: String, required: true },
-        // password: { type: String, required: true },
-        // admin: { type: Boolean, default: false }
+        Amount: { type: Number },
+        Item: { type: Schema.Types.ObjectId, ref: 'Item' },
+        User: { type: Schema.Types.ObjectId, ref: 'User' }
     }
 );
 

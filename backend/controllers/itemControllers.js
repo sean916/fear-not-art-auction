@@ -1,5 +1,8 @@
 const User = require('../models/user');
 const Item = require('../models/item');
+const Artist = require('../models/artist');
+const Category = require('../models/category');
+const Bid = require('../models/bid');
 const async = require('async');
 const bcrypt = require('bcryptjs');
 const session = require("express-session");
@@ -13,7 +16,7 @@ exports.getItems = async function(req, res, next) {
 
     try {
         let data = await Item.find({})
-        .then(res.json(data));
+        return res.json(data);
 
     } catch (error) {
         console.log(error);
@@ -27,8 +30,8 @@ exports.getItems = async function(req, res, next) {
 exports.getItemDescription = async function(req, res, next) {
 
     try {
-        let data = await Item.findById(req.prams.id)
-        .then(res.json(data));
+        let data = await Item.findById(req.params.id)
+        return res.json(data);
         
     } catch (error) {
         console.log(error);
@@ -37,3 +40,31 @@ exports.getItemDescription = async function(req, res, next) {
 }
 
 // // Get all items, sort by???
+
+// Create new Item
+// router.post('/', itemController.postItem)
+exports.postItem = async function(req, res, next) {
+    let item = new Item(
+        {
+            LotNum: req.body.LotNum,
+            Title: req.body.Title,
+            Description: req.body.Description,
+            Condition: req.body.Condition,
+            LowEst: req.body.LowEst,
+            HighEst: req.body.HighEst,
+            StartPrice: req.body.StartPrice,
+            Artist: req.body.Artist,
+            Category: req.body.Category
+        }
+    );
+    try {
+        item.save();
+        res.json('Item saved')
+    } catch (error) {
+        return next(error);
+    }
+}
+
+// Update an Item
+
+// Delete an Item

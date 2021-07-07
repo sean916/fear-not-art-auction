@@ -1,5 +1,7 @@
 const User = require('../models/user');
 const Item = require('../models/item');
+const Artist = require('../models/artist');
+const Category = require('../models/category');
 const Bid = require('../models/bid');
 const async = require('async');
 const bcrypt = require('bcryptjs');
@@ -10,7 +12,7 @@ const LocalStrategy = require("passport-local").Strategy;
 // // Send bid request with form information
 // router.post('/', bidController.postBid);
 exports.postBid = async (req, res, next) => {
-
+    return next
     // Check if bid amount is higher than current bid
 
 
@@ -41,3 +43,14 @@ exports.postBid = async (req, res, next) => {
 //         res.status(500).json({message: 'Server error'});
 //     }
 // };
+
+
+// View Bids
+
+// View a Bid
+
+// Create new Bid
+
+// Update a Bid
+
+// Delete a Bid

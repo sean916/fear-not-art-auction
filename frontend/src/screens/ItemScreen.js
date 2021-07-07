@@ -20,10 +20,11 @@ const ItemScreen = () => {
 
     // Fetch all items from API
     async function fetchAllData() {
+        console.log('fetching data..')
         const request = await axios.get('/api/item');
-        console.log(request);
+        console.log(request.data);
 
-        //setItems(request.???)
+        setItems(request.data)
 
         setLoading(false);
         return;
@@ -45,13 +46,16 @@ const ItemScreen = () => {
                     <Item 
                     key={item._id}
                     itemId={item._id}
-                    artist={item.artist}
-                    title={item.title}
-                    description={item.description}
+                    LotNum={item.LotNum}
+                    Artist={item.Artist}
+                    Title={item.Title}
+                    Description={item.Description}
+                    Condition={item.Condition}
+                    Category={item.Category}
                     imageUrl={item.imageUrl}
                     />)
                 )}
-                {/* Can get rid of these Item renders*/}
+                {/* Can get rid of these Item renders once we pull data from api*/}
                 <Item />
                 <Item />
                 <Item />
