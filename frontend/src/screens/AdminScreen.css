@@ -1,3 +1,57 @@
 .adminscreen {
+    display: block;
+    max-width: 1300px;
+    margin: 1rem auto;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    min-height: 90vh
+}
+
+.adminNav {
     display: flex;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.adminNav > ul > button {
+    padding: 14px;
+    border-radius: 10px;
+    background-color:  rgb(52, 70, 90);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 6px;
+    width: 100%;
+}
+
+.adminNav > ul > button:hover {
+    background-color: rgb(112, 136, 163)
+}
+
+.itemForm {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+}
+
+.artistForm {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+}
+
+.categoryForm {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
 }

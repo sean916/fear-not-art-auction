@@ -23,6 +23,7 @@ router.get('/:id', itemController.getItemDescription)
 router.post('/', itemController.postItem)
 
 // Update an Item
+router.patch('/:id', itemController.patchItem)
 
 // Delete an Item
 

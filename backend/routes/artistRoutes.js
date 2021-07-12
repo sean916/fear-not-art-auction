@@ -16,6 +16,7 @@ router.get('/:id', artistController.getArtistDescription)
 // Get all artists, sort by???
 
 // Create new Artist
+router.post('/', artistController.postArtist)
 
 // Update an Artist
 

@@ -31,6 +31,7 @@
     "express-session": "^1.17.2",
     "find-config": "^1.0.0",
     "mongoose": "^5.12.13",
+    "multiselect-react-dropdown": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "path": "^0.12.7"

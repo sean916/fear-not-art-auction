@@ -13,7 +13,8 @@ var ItemSchema = new Schema(
         StartPrice: { type: String },
         Artist: { type: Schema.Types.ObjectId, ref: 'Artist' },
         Category: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
-        Bid: [{ type: Schema.Types.ObjectId, ref: 'Bid' }]
+        Bid: [{ type: Schema.Types.ObjectId, ref: 'Bid' }],
+        imgURL: [{ type: String }]
         
     }
 );

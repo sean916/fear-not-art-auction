@@ -16,7 +16,7 @@ exports.getCategories = async function(req, res, next) {
 
     try {
         let data = await Category.find({})
-        .then(res.json(data));
+        return res.json(data);
 
     } catch (error) {
         console.log(error);
@@ -31,7 +31,7 @@ exports.getCategoryDescription = async function(req, res, next) {
 
     try {
         let data = await Category.findById(req.prams.id)
-        .then(res.json(data));
+        return res.json(data);
         
     } catch (error) {
         console.log(error);
@@ -46,7 +46,31 @@ exports.getCategoryDescription = async function(req, res, next) {
 // View a Cateogry
 
 // Create new Cateogry
+exports.postCategory = async function (req, res, next) {
+
+        // Check database for category with this name
+        let categoryExist = await Category.find({ "Name": req.body.Name });
+        if (categoryExist.length > 0) {
+            return res.json(`${req.body.Name} is already in the database.`)
+        }
+    
+        let thisCategory = new Category({
+            Name: req.body.Name
+        });
+    
+        try {
+            thisCategory.save()
+            .then( () => res.json(`${req.body.Name} was added to the database.`))
+    
+        } catch (error) {
+            console.log(error);
+            return res.error
+        }
+}
 
 // Update an Cateogry
+exports.patchCategory = async function(req, res, next) {
 
-// Delete an Cateogry
+}
+
+// Delete an Category

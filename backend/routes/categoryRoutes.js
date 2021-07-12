@@ -16,8 +16,10 @@ router.get('/:id', categoryController.getCategoryDescription)
 // Get all categorys, sort by???
 
 // Create new Category
+router.post('/', categoryController.postCategory)
 
 // Update an Category
+router.patch('/:id', categoryController.patchCategory)
 
 // Delete an Category
 

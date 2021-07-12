@@ -15,7 +15,7 @@ const LocalStrategy = require("passport-local").Strategy;
 exports.getItems = async function(req, res, next) {
 
     try {
-        let data = await Item.find({})
+        let data = await Item.find({}).populate('Artist').populate('Category');
         return res.json(data);
 
     } catch (error) {
@@ -30,7 +30,7 @@ exports.getItems = async function(req, res, next) {
 exports.getItemDescription = async function(req, res, next) {
 
     try {
-        let data = await Item.findById(req.params.id)
+        let data = await Item.findById(req.params.id).populate('Artist').populate('Category');
         return res.json(data);
         
     } catch (error) {
@@ -44,6 +44,14 @@ exports.getItemDescription = async function(req, res, next) {
 // Create new Item
 // router.post('/', itemController.postItem)
 exports.postItem = async function(req, res, next) {
+
+    // Check if item with that lot number exists?
+
+    // Filter imgArray for blank fields
+    let filteredArray = req.body.imgURL.filter(function(value, index, arr) {
+        return value !== ''
+    });
+
     let item = new Item(
         {
             LotNum: req.body.LotNum,
@@ -54,17 +62,21 @@ exports.postItem = async function(req, res, next) {
             HighEst: req.body.HighEst,
             StartPrice: req.body.StartPrice,
             Artist: req.body.Artist,
-            Category: req.body.Category
+            Category: req.body.Category,
+            imgURL: filteredArray
         }
     );
     try {
-        item.save();
-        res.json('Item saved')
+        item.save()
+        .then( () => res.json(`${item.Title} was added to the database.`))
     } catch (error) {
         return next(error);
     }
 }
 
 // Update an Item
+exports.patchItem = async function(req, res, next) {
+
+}
 
 // Delete an Item

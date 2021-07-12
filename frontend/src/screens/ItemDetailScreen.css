@@ -1,0 +1,8 @@
+#active-img {
+    height: 360px;
+}
+
+div.img-gallery > img {
+    max-height: 90px;
+    max-width: 90px;
+}

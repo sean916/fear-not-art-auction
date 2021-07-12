@@ -5,8 +5,37 @@
 
 .itemscreen-title {
     font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
     margin-bottom: 1rem;
 }
+
+.itemscreen > .item-filter {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin: 20px;
+}
+
+.itemscreen > .item-filter > input {
+    background: transparent;
+}
+
+.itemscreen > .item-filter > .artist-filter {
+    display: inline-block;
+    max-width: 800px;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+} 
+.itemscreen > .item-filter > .category-filter {
+    display: inline-block;
+    max-width: 800px;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+} 
 
 .item-grid {
     display: grid;
