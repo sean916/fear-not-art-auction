@@ -74,3 +74,6 @@ exports.patchCategory = async function(req, res, next) {
 }
 
 // Delete an Category
+exports.deleteCategory = async function(req, res, next) {
+    
+}

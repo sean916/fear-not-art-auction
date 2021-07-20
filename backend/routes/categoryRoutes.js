@@ -22,5 +22,6 @@ router.post('/', categoryController.postCategory)
 router.patch('/:id', categoryController.patchCategory)
 
 // Delete an Category
+router.delete('/:id', categoryController.deleteCategory)
 
 module.exports = router;

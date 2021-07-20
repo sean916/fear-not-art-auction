@@ -3,6 +3,7 @@ import './ItemForm.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { Multiselect } from 'multiselect-react-dropdown';
+import {Image, Video, Transformation, cloudinary, CloudinaryContext} from 'cloudinary-react';
 
 
 const ItemForm = () => {
@@ -45,21 +46,21 @@ const ItemForm = () => {
         setStartPrice(event.target.value)
     }
 
-    const [Artist, setArtist] = useState([]);
-    let handleArtistSelect = (event) => {
-        console.log(event);
-        setArtist(event);
-    }
-    let handleArtistRemove = (event) => {
-        console.log(event);
-        setArtist(event);
-    }
+    // const [Artist, setArtist] = useState([]);
+    // let handleArtistSelect = (event) => {
+    //     console.log(event);
+    //     setArtist(event);
+    // }
+    // let handleArtistRemove = (event) => {
+    //     console.log(event);
+    //     setArtist(event);
+    // }
 
-    const [artistList, setArtistList] = useState([]);
-    const fetchArtistData = async () => {
-        const response = await axios.get('/api/artist');
-        setArtistList(response.data)
-    }
+    // const [artistList, setArtistList] = useState([]);
+    // const fetchArtistData = async () => {
+    //     const response = await axios.get('/api/artist');
+    //     setArtistList(response.data)
+    // }
 
     const [Category, setCategory] = useState([]);
     let handleCategorySelect = (event) => {
@@ -75,35 +76,114 @@ const ItemForm = () => {
         setCategoriesList(response.data);
     }
 
-    const [imgURL, setImgURL] = useState([]);
-    const [imgURL1, setImgURL1] = useState('');
-    const [imgURL2, setImgURL2] = useState('');
-    const [imgURL3, setImgURL3] = useState('');
-    const [imgURL4, setImgURL4] = useState('');
-    const [imgURL5, setImgURL5] = useState('');
-    let handleImgURL1Change = (e) => {
-        setImgURL1(e.target.value)
+    const [imgFileStrArr, setImgFileStrArr] = useState([]);
+
+    const [imgFileStr1, setImgFileStr1] = useState('');
+    const [imgFileStr2, setImgFileStr2] = useState('');
+    const [imgFileStr3, setImgFileStr3] = useState('');
+    const [imgFileStr4, setImgFileStr4] = useState('');
+    const [imgFileStr5, setImgFileStr5] = useState('');
+    const [imgPreview1, setImgPreview1] = useState();
+    const [imgPreview2, setImgPreview2] = useState();
+    const [imgPreview3, setImgPreview3] = useState();
+    const [imgPreview4, setImgPreview4] = useState();
+    const [imgPreview5, setImgPreview5] = useState();
+
+    let handleImgFile1Change = (e) => {
+        
+        const file = e.target.files[0];
+        if (file == null) {
+            setImgPreview1()
+            return
+        };
+        const reader = new FileReader;
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setImgPreview1(reader.result)
+            setImgFileStr1(reader.result)
+        }
     }
-    let handleImgURL2Change = (e) => {
-        setImgURL2(e.target.value)
+    let handleImgFile2Change = (e) => {
+        const file = e.target.files[0];
+        if (file == null) {
+            setImgPreview2()
+            return
+        };
+        const reader = new FileReader;
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setImgPreview2(reader.result)
+            setImgFileStr2(reader.result)
+        }
     }
-    let handleImgURL3Change = (e) => {
-        setImgURL3(e.target.value)
+    let handleImgFile3Change = (e) => {
+        const file = e.target.files[0];
+        if (file == null) {
+            setImgPreview3()
+            return
+        };
+        const reader = new FileReader;
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setImgPreview3(reader.result)
+            setImgFileStr3(reader.result)
+        }
     }
-    let handleImgURL4Change = (e) => {
-        setImgURL4(e.target.value)
+    let handleImgFile4Change = (e) => {
+        const file = e.target.files[0];
+        if (file == null) {
+            setImgPreview4()
+            return
+        };
+        const reader = new FileReader;
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setImgPreview4(reader.result)
+            setImgFileStr4(reader.result)
+        }
     }
-    let handleImgURL5Change = (e) => {
-        setImgURL5(e.target.value)
+    let handleImgFile5Change = (e) => {
+        const file = e.target.files[0];
+        if (file == null) {
+            setImgPreview5()
+            return
+        };
+        const reader = new FileReader;
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setImgPreview5(reader.result)
+            setImgFileStr5(reader.result)
+        }
+    }
+
+    let handleImgRemove1 = (e) => {
+        setImgFileStr1('');
+        setImgPreview1();
+    }
+    let handleImgRemove2 = (e) => {
+        setImgFileStr2('');
+        setImgPreview2();
+    }
+    let handleImgRemove3 = (e) => {
+        setImgFileStr3('');
+        setImgPreview3();
+    }
+    let handleImgRemove4 = (e) => {
+        setImgFileStr4('');
+        setImgPreview4();
+    }
+    let handleImgRemove5 = (e) => {
+        setImgFileStr5('');
+        setImgPreview5();
     }
 
     let handleImgAdd = () => {
-        setImgURL([
-            imgURL1,
-            imgURL2,
-            imgURL3,
-            imgURL4,
-            imgURL5
+        setImgFileStrArr([
+            imgFileStr1,
+            imgFileStr2,
+            imgFileStr3,
+            imgFileStr4,
+            imgFileStr5
         ]);
     }
 
@@ -111,7 +191,7 @@ const ItemForm = () => {
     useEffect(() => {
         // Fetch data once
         fetchCategoryData()
-        fetchArtistData()
+        // fetchArtistData()
         setLoading(false);
       }, []);
 
@@ -123,10 +203,21 @@ const ItemForm = () => {
         setLowEst('');
         setHighEst('');
         setStartPrice('');
-        setArtist([]);
+        // setArtist([]);
         setCategory([]);
-        setImgURL([]);
+        setImgFileStrArr([]);
+        setImgFileStr1('')
+        setImgFileStr2('')
+        setImgFileStr3('')
+        setImgFileStr4('')
+        setImgFileStr5('')
+        setImgPreview1()
+        setImgPreview2()
+        setImgPreview3()
+        setImgPreview4()
+        setImgPreview5()
     }
+    
     let handleAddAnother = () => {
         setTempMessage('');
     }
@@ -134,7 +225,12 @@ const ItemForm = () => {
     let handleSubmit = async (e) => {
         e.preventDefault();
 
-        setTempMessage('Attempting to add this item...');
+        setTempMessage('Please Wait. Attempting to add photos to the database...');
+        // Add photos from the backend to the API and return an array of URLS
+
+        // Set imgURL to array of URLs
+
+        setTempMessage('Please Wait. Attempting to add this item...');
 
         let thisItem = {
             LotNum: LotNum,
@@ -144,9 +240,9 @@ const ItemForm = () => {
             LowEst: LowEst,
             HighEst: HighEst,
             StartPrice: StartPrice,
-            Artist: Artist[0],
+            // Artist: Artist,
             Category: Category,
-            imgURL: imgURL
+            imgURL: imgFileStrArr
         }
 
         console.log(thisItem);
@@ -172,15 +268,15 @@ const ItemForm = () => {
             <br></br>
             <form onSubmit={handleSubmit}>
 
-            <div className='Artist'>
+            {/* <div className='Artist'>
                     <label htmlFor='Artist'>Artist : </label>
                     { loading ? <h2>Loading...</h2> : (
-                        <Multiselect options={artistList} displayValue="Name" onSelect={handleArtistSelect} onRemove={handleArtistRemove} selectionLimit='1' />
+                        <Multiselect options={artistList} displayValue="Name" onSelect={handleArtistSelect} onRemove={handleArtistRemove} />
                     )
                     }
 
                 </div>
-                <br></br>
+                <br></br> */}
 
                 <div className='Category'>
                     <label htmlFor='Category'>Category : </label>
@@ -242,13 +338,13 @@ const ItemForm = () => {
                 <br></br>
 
                 <div className='imgURL'>
-                    <label htmlFor='imgURL'>Enter image URLs: </label>
+                    <label htmlFor='imgURL'>Enter image Files: </label>
                     <br></br>
-                    <input name='imgURL1' type='text' size='60' value={imgURL1} onChange={handleImgURL1Change}></input><br></br>
-                    <input name='imgURL2' type='text' size='60' value={imgURL2} onChange={handleImgURL2Change}></input><br></br>
-                    <input name='imgURL3' type='text' size='60' value={imgURL3} onChange={handleImgURL3Change}></input><br></br>
-                    <input name='imgURL4' type='text' size='60' value={imgURL4} onChange={handleImgURL4Change}></input><br></br>
-                    <input name='imgURL5' type='text' size='60' value={imgURL5} onChange={handleImgURL5Change}></input><br></br>
+                    <input name='imgURL1' type='file' accept="image/*" onChange={handleImgFile1Change}></input><br></br><br></br>
+                    <input name='imgURL2' type='file' accept="image/*" onChange={handleImgFile2Change}></input><br></br><br></br>
+                    <input name='imgURL3' type='file' accept="image/*" onChange={handleImgFile3Change}></input><br></br><br></br>
+                    <input name='imgURL4' type='file' accept="image/*" onChange={handleImgFile4Change}></input><br></br><br></br>
+                    <input name='imgURL5' type='file' accept="image/*" onChange={handleImgFile5Change}></input><br></br><br></br>
                 </div>
                 <br></br>
 
@@ -258,6 +354,47 @@ const ItemForm = () => {
                 <br></br>
             </form>
             {tempMessage}
+
+            {imgPreview1 && (
+                <div className='img-preview-1'>
+                    <span>Image 1 </span><span onClick={handleImgRemove1}><button>Remove this Image</button></span>
+                    <img src={imgPreview1} alt='1' style={{ height: '150px'}} />
+                    <br></br>
+                </div>
+            )}
+
+            {imgPreview2 && (
+                 <div className='img-preview-2'>
+                    <span>Image 2 </span><span onClick={handleImgRemove2}><button>Remove this Image</button></span>
+                    <img src={imgPreview2} alt='2' style={{ height: '150px'}} />
+                    <br></br>
+                </div>
+            )}
+
+            {imgPreview3 && (
+                <div className='img-preview-3'>
+                <span>Image 3 </span><span onClick={handleImgRemove3}><button><button>Remove this Image</button></button></span>
+                <img src={imgPreview3} alt='3' style={{ height: '150px'}} />
+                <br></br>
+            </div>
+            )}
+
+            {imgPreview4 && (
+                <div className='img-preview-4'>
+                <span>Image 4 </span><span onClick={handleImgRemove4}><button>Remove this Image</button></span>
+                <img src={imgPreview4} alt='4' style={{ height: '150px'}} />
+                <br></br>
+            </div>
+            )}
+
+            {imgPreview5 && (
+                <div className='img-preview-5'>
+                <span>Image 5 </span><span onClick={handleImgRemove5}><button>Remove this Image</button></span>
+                <img src={imgPreview5} alt='5' style={{ height: '150px'}} />
+                <br></br>
+            </div>
+            )}
+
             
         </div>
     )

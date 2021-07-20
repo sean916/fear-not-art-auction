@@ -22,9 +22,13 @@ router.get('/:id', itemController.getItemDescription)
 // Create new Item
 router.post('/', itemController.postItem)
 
+// Create many Items with file upload
+router.post('/file', itemController.postManyItems)
+
 // Update an Item
 router.patch('/:id', itemController.patchItem)
 
 // Delete an Item
+router.delete('/:id', itemController.deleteItem)
 
 module.exports = router;

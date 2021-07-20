@@ -19,7 +19,9 @@ router.get('/:id', artistController.getArtistDescription)
 router.post('/', artistController.postArtist)
 
 // Update an Artist
+router.patch('/:id', artistController.patchArtist)
 
 // Delete an Artist
+router.delete('/:id', artistController.deleteArtist)
 
 module.exports = router;

@@ -23,7 +23,10 @@
   "homepage": "https://github.com/sean916/fear-not-art-auction#readme",
   "dependencies": {
     "async": "^3.2.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.2",
+    "cloudinary": "^1.26.2",
+    "cloudinary-react": "^1.7.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -34,7 +37,8 @@
     "multiselect-react-dropdown": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",

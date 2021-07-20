@@ -1,3 +1,69 @@
+.item-detail {
+    width: 300px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 1px 4px rgb(0,0,0,0.4);
+    margin: 8px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-detail > img {
+    height: 170px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.item-info > p {
+    margin-bottom: 8px;
+}
+
+.item-detail > p {
+    margin-bottom: 8px;
+}
+
+.item-price {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+p > .item-title {
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.item-info > .item-description > p {
+    font-size: .9rem;
+    overflow: hidden;
+}
+
+.item-button {
+    display: inline-block;
+    width: 50%;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: rgb(52, 70, 90);
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 20px;
+    margin-top: 20px;
+    
+}
+
+.item-button:hover {
+    color: rgb(226, 155, 23);
+    background-color: rgb(73, 105, 141);
+
+}
+
+.item-detail {
+    max-width: 900px;
+    width: 80%;
+    margin-top: 20px;
+}
+
 #active-img {
     height: 360px;
 }
@@ -6,3 +72,36 @@ div.img-gallery > img {
     max-height: 90px;
     max-width: 90px;
 }
+
+.item-detail > div.admin-tools {
+    background-color: rgb(60, 92, 128);
+    text-align: center;
+    color: rgb(226, 155, 23);
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+div.itemform {
+    margin: 20px;
+}
+
+div.itemform > .imgURL > div {
+    display: inline-block;
+    align-items: left;
+    justify-content: left;
+}
+div.itemform > .imgURL > div > img{
+    max-width: 30%;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+
+}
+
+
+/* <div className='admin-tools'>
+<p>{tempMessage}</p>
+<span onClick={handleEditClick}>Edit this item</span>
+<span onClick={handleDeleteClick}>Delete this item</span>
+</div> */

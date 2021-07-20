@@ -4,6 +4,8 @@ import './AdminScreen.css';
 import ItemForm from '../components/ItemForm';
 import ArtistForm from '../components/ArtistForm';
 import CategoryForm from '../components/CategoryForm';
+import FileForm from '../components/FileForm';
+import { Link } from 'react-router-dom';
 
 
 const AdminScreen = (props) => {
@@ -29,7 +31,8 @@ const AdminScreen = (props) => {
     }
 
     let existingItemsClick = () => {
-        setActiveComponent('existingItems')
+        // setActiveComponent('existingItems')
+        window.location.href = '/items'
     }
 
     let newArtistClick = () => {
@@ -61,8 +64,8 @@ const AdminScreen = (props) => {
                     <br></br>
                     <button onClick={newItemClick}>Add a new Item</button>
                     <br></br>
-                    <button onClick={newArtistClick}>Add a new Artist</button>
-                    <br></br>
+                    {/* <button onClick={newArtistClick}>Add a new Artist</button>
+                    <br></br> */}
                     <button onClick={newCategoryClick}>Add a new Category</button>
                     <br></br>
                 </ul>
@@ -88,18 +91,7 @@ const AdminScreen = (props) => {
             <div className='adminscreen'>
                 {adminNav}
                 <div className='spreadsheetForm'>
-                    Spreadsheet form under construction
-                </div>
-            </div>
-        )
-    }
-
-    if (activeComponent == 'existingItems') {
-        content = (
-            <div className='adminscreen'>
-                {adminNav}
-                <div className='spreadsheetForm'>
-                    Existing Items under construction
+                    <FileForm />
                 </div>
             </div>
         )

@@ -9,6 +9,11 @@
     text-align: center;
     margin-bottom: 1rem;
 }
+.admin-title {
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}
 
 .itemscreen > .item-filter {
     display: inline-block;

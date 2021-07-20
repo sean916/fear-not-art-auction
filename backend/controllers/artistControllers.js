@@ -70,3 +70,6 @@ exports.patchArtist = async function(req, res, next) {
 }
 
 // Delete an Item
+exports.deleteArtist = async function(req, res, next) {
+    
+}

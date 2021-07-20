@@ -14,25 +14,28 @@ const Item = ({ itemId, LotNum, Title, Description, Condition, Artist, Category,
         }
       }, []);
 
+    //   let handleClick = () => {
+    //       window.open(`/items/${itemId}`, "_blank")
+    //   }
 
     return (
-        <div className='item'>
+        <a className='item' href={`/items/${itemId}`} target='_blank'>
             <img src={imgURL} alt='item' />
             <div className='item-info'>
+                <p className='item-lotnum'>LotNum: {LotNum}</p>
                 <p className='item-title'>{Title}</p>
                 <div className='item-description'>
                     <p>{Description}</p>
                     <p>{Condition}</p>
-                    { Artist && Artist.Name ? 
-                    <p>{Artist.Name}</p> : <p></p>
-                    }
+                    {/* { Artist.length > 0 ? 
+                        Artist.map(artist => {
+                            <p>{artist.Name}</p>
+                        }) : <p></p>
+                        } */}
                 </div>
-                <div className='item-price'>Current Price: 500</div>
-                <Link to={`/items/${itemId}`} className='item-button'>
-                    View Item
-                </Link>
+                <div className='item-price'></div>
             </div>
-        </div>
+        </a>
     )
 }
 

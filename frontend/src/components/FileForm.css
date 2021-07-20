@@ -1,0 +1,45 @@
+.file-select {
+    display: inline-block;
+    justify-content: space-around;
+    align-items: left;
+    width: 390px;
+    background-color:  rgb(52, 70, 90);
+    border-radius: 10px;
+}
+
+.instructions {
+    text-align: left;
+    width: 400px;
+    margin: 10px auto;
+}
+
+input[type=file] {
+    background-color: rgb(52, 70, 90);
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bolder;
+    width: 300px;
+    border-radius: 10px;
+}
+
+input[type=file]:hover {
+    background-color: rgb(112, 136, 163);
+}
+
+input[type=file]::file-selector-button {  
+    padding: 14px;
+    border-radius: 10px;
+    background-color:  rgb(52, 70, 90);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 6px;
+    width: 400px;
+
+}
+
+button {
+    padding: 3px;
+    font-size: 16px;
+}
