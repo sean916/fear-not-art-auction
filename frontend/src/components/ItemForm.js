@@ -242,7 +242,7 @@ const ItemForm = () => {
             StartPrice: StartPrice,
             // Artist: Artist,
             Category: Category,
-            imgURL: imgFileStrArr
+            imgFileStrArr: imgFileStrArr
         }
 
         console.log(thisItem);
