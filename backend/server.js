@@ -11,6 +11,7 @@ const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 // Import Models
 const User = require('./models/user');
@@ -31,6 +32,11 @@ app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUniniti
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ limit: '50mb' }));
+
+app.use(express.static(path.resolve(__dirname, "./frontend/build")));
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
+});
 
 // Connect to MongoDB database
 connectDB();
