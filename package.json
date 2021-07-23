@@ -7,11 +7,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "heroku-postbuild": "npm run install-frontend && npm run build",
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTIOON=false npm install npm && run build"
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
   },
   "proxy": "http://localhost:5000",
   "repository": {
