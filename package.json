@@ -11,8 +11,8 @@
     "install-frontend": "cd frontend && npm install",
     "heroku-postbuild": "npm run install-frontend && npm run build",
     "server": "nodemon backend/server.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"cd ../frontend && npm run start --prefix frontend\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"cd ../frontend && npm run start --prefix frontend\""
   },
   "proxy": "http://localhost:5000",
   "repository": {
