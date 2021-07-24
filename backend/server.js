@@ -12,6 +12,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 // Import Models
 const User = require('./models/user');
 const Item = require('./models/item');
@@ -32,9 +34,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ limit: '50mb' }));
 
-app.use(express.static(path.resolve(__dirname, "./frontend/build")));
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
+app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
+app.get('*', function(request, response) {
+  response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
 });
 
 // Connect to MongoDB database
