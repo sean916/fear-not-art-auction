@@ -24,7 +24,9 @@ const ItemScreen = () => {
 
     // Fetch all items from API
     async function fetchItemData() {
+        console.log('attempting to fetch data...')
         const request = await axios.get('/api/item');
+        console.log(request.data);
         setItemData(request.data)
         sortItemsLotNum(request.data)
         return;
