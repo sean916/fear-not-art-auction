@@ -34,7 +34,7 @@ app.use(express.urlencoded({ limit: '50mb' }));
 
 app.use(express.static(path.resolve(__dirname, "./frontend/build")));
 app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
+  response.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
 });
 
 // Connect to MongoDB database
