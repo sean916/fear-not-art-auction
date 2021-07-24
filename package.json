@@ -8,12 +8,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "cd frontend && npm run build",
-    "install-frontend": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-frontend && npm run build",
-    "server": "nodemon backend/server.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix ../frontend\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix ../frontend\""
+    "start": "node server.js",
+    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "proxy": "http://localhost:5000",
   "repository": {
