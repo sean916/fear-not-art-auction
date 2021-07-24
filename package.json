@@ -8,8 +8,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "build": "cd react-ui/ && npm install && npm run build"
+    "server": "node backend/server.js",
+    "build": "cd react-ui/ && npm install",
+    "client": "npm start --prefix react-ui",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "proxy": "http://localhost:5000",
   "repository": {
