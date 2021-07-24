@@ -8,7 +8,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "server": "node backend/server.js",
+    "client": "npm start --prefix frontend",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "proxy": "http://localhost:5000",
