@@ -8,10 +8,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "node backend/server.js",
+    "start": "node backend/server.js",
     "build": "cd react-ui/ && npm install",
     "client": "npm start --prefix react-ui",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "heroku-postbuild": "cd react-ui && npm install && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "proxy": "http://localhost:5000",
   "repository": {
