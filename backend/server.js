@@ -22,7 +22,7 @@ const Bid = require('./models/bid');
 const app = express();
 
 app.use(cors({
-    origin: 'https://quiet-thicket-87706.herokuapp.com/', // Location of react app
+    origin: 'https://quiet-thicket-87706.herokuapp.com/**', // Location of react app
     credentials: true
 }));
 app.use(express.json({ limit: '50mb' }));
