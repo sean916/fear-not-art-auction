@@ -72,7 +72,7 @@ const ItemForm = () => {
 
     const [categoriesList, setCategoriesList] = useState([]);
     const fetchCategoryData = async () => {
-        const response = await axios.get('/api/category');
+        const response = await axios.get('http://quiet-thicket-87706.herokuapp.com/api/category');
         setCategoriesList(response.data);
     }
 
@@ -246,7 +246,7 @@ const ItemForm = () => {
         }
 
         console.log(thisItem);
-        axios.post('/api/item', thisItem)
+        axios.post('http://quiet-thicket-87706.herokuapp.com/api/item', thisItem)
         .then((res) => setTempMessage(res.data));
 
         resetForm();

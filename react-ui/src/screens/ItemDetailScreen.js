@@ -69,7 +69,7 @@ const ItemDetailScreen = ({ match }) => {
 
     const [artistList, setArtistList] = useState([]);
     const fetchArtistData = async () => {
-        const response = await axios.get('/api/artist');
+        const response = await axios.get('http://quiet-thicket-87706.herokuapp.com/api/artist');
         setArtistList(response.data)
     }
 
@@ -83,7 +83,7 @@ const ItemDetailScreen = ({ match }) => {
 
     const [categoriesList, setCategoriesList] = useState([]);
     const fetchCategoryData = async () => {
-        const response = await axios.get('/api/category');
+        const response = await axios.get('http://quiet-thicket-87706.herokuapp.com/api/category');
         setCategoriesList(response.data);
     }
 
@@ -232,7 +232,7 @@ const ItemDetailScreen = ({ match }) => {
     // Fetch item from API
     async function fetchData() {
         console.log(`fetching data for ${match.params.id}`)
-        const request = await axios.get(`/api/item/${match.params.id}`);
+        const request = await axios.get(`http://quiet-thicket-87706.herokuapp.com/api/item/${match.params.id}`);
 
         setLotNum(request.data.LotNum);
         setTitle(request.data.Title);
@@ -274,7 +274,7 @@ const ItemDetailScreen = ({ match }) => {
 
         setTempMessage('Attempting to delete this item from the database');
 
-        axios.delete(`/api/item/${match.params.id}`)
+        axios.delete(`http://quiet-thicket-87706.herokuapp.com/api/item/${match.params.id}`)
             .then(() => window.location.href = '/items')
     }
 
@@ -314,7 +314,7 @@ const ItemDetailScreen = ({ match }) => {
         }
 
         console.log(thisItem);
-        axios.patch(`/api/item/${match.params.id}`, thisItem)
+        axios.patch(`http://quiet-thicket-87706.herokuapp.com/api/item/${match.params.id}`, thisItem)
             .then((res) => setTempMessage(res.data));
         setEditStatus(false);
     }

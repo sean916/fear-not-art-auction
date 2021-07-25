@@ -41,7 +41,7 @@ const FileForm = () => {
                    }
                    console.log('filtered rowObject..')
                    console.log(rowObject);
-                   axios.post('/api/item/file', rowObject)
+                   axios.post('http://quiet-thicket-87706.herokuapp.com/api/item/file', rowObject)
                    .then((res) => setTempMessage(res.data));
                 
                 })

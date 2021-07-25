@@ -17,7 +17,7 @@ const ArtistForm = () => {
         let thisArtist = {
             Name: Name
         }
-        axios.post('/api/artist', thisArtist)
+        axios.post('http://quiet-thicket-87706.herokuapp.com/api/artist', thisArtist)
         .then(res => setTempMessage(res.data))
         
 

@@ -17,7 +17,7 @@ const CategoryForm = () => {
         let thisCategory = {
             Name: Name
         }
-        axios.post('/api/category', thisCategory)
+        axios.post('http://quiet-thicket-87706.herokuapp.com/api/category', thisCategory)
         .then(res => setTempMessage(res.data))
         
 

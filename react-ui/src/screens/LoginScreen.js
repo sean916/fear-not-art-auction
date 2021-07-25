@@ -46,7 +46,7 @@ const LoginScreen = (props) => {
 
         setTempMessage(`Attempting to login ${thisUser.email} ...`)
 
-        const response = await axios.post('/api/login', thisUser)
+        const response = await axios.post('http://quiet-thicket-87706.herokuapp.com/api/login', thisUser)
         setUser(response.data)
         localStorage.setItem('user', JSON.stringify(response.data))
         console.log(response.data)

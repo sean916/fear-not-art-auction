@@ -26,7 +26,7 @@ const RegisterScreen = (props) => {
         setTempMessage(`Adding ${newUser.email}...`)
 
 
-        axios.post('/api/register', newUser)
+        axios.post('http://quiet-thicket-87706.herokuapp.com/api/register', newUser)
         .then(res => setTempMessage(res.data))
 
     }
