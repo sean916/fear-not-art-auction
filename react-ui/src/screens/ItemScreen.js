@@ -25,7 +25,7 @@ const ItemScreen = () => {
     // Fetch all items from API
     async function fetchItemData() {
         console.log('attempting to fetch data...')
-        const request = await axios.get('/api/item');
+        const request = await axios.get(`/api/item`);
         console.log(request);
         setItemData(request.data)
         sortItemsLotNum(request.data)
@@ -33,7 +33,7 @@ const ItemScreen = () => {
     }
     // Fetch all categories from API
     async function fetchCategoryData() {
-        const request = await axios.get('/api/category');
+        const request = await axios.get(`/api/category`);
         setCategoriesList(request.data)
         return;
     }

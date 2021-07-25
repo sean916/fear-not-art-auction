@@ -18,6 +18,7 @@ const cloudinary = require('../utils/cloudinary');
 exports.getItems = async function(req, res, next) {
 
     try {
+        console.log('accessing items from database...')
         let data = await Item.find({}).populate('Artist').populate('Category');
         console.log(data);
         return res.json(data);

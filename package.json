@@ -12,9 +12,8 @@
     "build": "cd react-ui/ && npm install",
     "client": "npm start --prefix react-ui",
     "heroku-postbuild": "cd react-ui && npm install && npm run build",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run start\" \"npm run client\""
   },
-  "proxy": "http://localhost:5000",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sean916/fear-not-art-auction.git"
