@@ -21,10 +21,7 @@ const Bid = require('./models/bid');
 
 const app = express();
 
-app.use(cors({
-    origin: 'https://quiet-thicket-87706.herokuapp.com/**', // Location of react app
-    credentials: true
-}));
+app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(bodyParser.json({limit: '50mb' }));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
