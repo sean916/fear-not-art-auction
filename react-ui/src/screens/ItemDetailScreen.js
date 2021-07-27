@@ -465,13 +465,13 @@ const ItemDetailScreen = ({ match }) => {
 
     if (user == null || user.admin == false) {
         return (
-            <div className='item'>
+            <div className='item-detail'>
 
                 <img id='active-img' src={activeImg} alt='item' />
                 <div className='item-info'>
-                    <p className='item-lotnum'>LotNum: {LotNum}</p>
                     <p className='item-title'>{Title}</p>
                     <div className='item-description'>
+                        <p className='item-lotnum'>LotNum: {LotNum}</p>
                         <p>{Description}</p>
                         <p>{Condition}</p>
                         {/* { Artist.length > 0 ? 
@@ -480,7 +480,6 @@ const ItemDetailScreen = ({ match }) => {
                         }) : <p></p>
                         } */}
                     </div>
-                    <div className='item-price'></div>
                 </div>
                 <div className='img-gallery'>
                     {

@@ -73,6 +73,11 @@ div.img-gallery > img {
     max-width: 90px;
 }
 
+div.img-gallery > img:hover {
+    opacity: 0.5;
+    transition: ease;
+}
+
 .item-detail > div.admin-tools {
     background-color: rgb(60, 92, 128);
     text-align: center;
